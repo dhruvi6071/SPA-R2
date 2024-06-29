@@ -7,6 +7,7 @@ function EventsPage() {
   const [fetchedEvents, setFetchedEvents] = useState();
   const [error, setError] = useState();
 
+  //must be written code to handle http request states and fetch the data.
   useEffect(() => {
     async function fetchEvents() {
       setIsLoading(true);
