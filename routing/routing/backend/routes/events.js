@@ -13,9 +13,8 @@ router.get('/', async (req, res, next) => {
   try {
     const events = await getAll();
     //it makes sure that the response is only sent back from the backend to the frontend after the one and half second.
-    setTimeout(() => {
-      res.json({ events: events });
-    }, 1500); 
+          res.json({ events: events });
+    
     
   } catch (error) {
     next(error);
