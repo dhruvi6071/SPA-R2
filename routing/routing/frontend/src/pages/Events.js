@@ -11,7 +11,7 @@ function EventsPage() {
 export default EventsPage;
 
 export async function loader() {
-  //
+  // We can't use react hooks into loaders, because loader is not a react component. But we can use all js components.
   const response = await fetch('http://localhost:8080/events');
 
   if (!response.ok) {
