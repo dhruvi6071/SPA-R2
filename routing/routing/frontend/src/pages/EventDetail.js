@@ -1,4 +1,4 @@
-import { useParams, useRouteLoaderData} from 'react-router-dom';
+// import { useParams, useRouteLoaderData} from 'react-router-dom';
 import EventItem from '../components/EventItem';
 import { useLoaderData, json } from 'react-router-dom';
 function EventDetail() {
@@ -9,7 +9,7 @@ function EventDetail() {
             
         </EventItem>
     )
-}
+} 
 
 
 export default EventDetail;
