@@ -1,5 +1,7 @@
-import classes from './EventItem.module.css';
 import { Link } from 'react-router-dom';
+
+import classes from './EventItem.module.css';
+
 function EventItem({ event }) {
   function startDeleteHandler() {
     // ...

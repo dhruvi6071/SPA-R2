@@ -1,6 +1,6 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
-import classes from "./EventForm.module.css";
+import classes from './EventForm.module.css';
 
 function EventForm({ method, event }) {
   const navigate = useNavigate();
@@ -47,7 +47,7 @@ function EventForm({ method, event }) {
           name="description"
           rows="5"
           required
-          defaultValue={event ? event.description : ""}
+          defaultValue={event ? event.description : ''}
         />
       </p>
       <div className={classes.actions}>
