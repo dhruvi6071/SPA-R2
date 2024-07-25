@@ -1,12 +1,10 @@
-import classes from '../components/PageContent.module.css';
+import { useRouteLoaderData } from 'react-router-dom';
+import EventForm from '../components/EventForm';
 
-function PageContent({ title, children }) {
-  return (
-    <div className={classes.content}>
-      <h1>{title}</h1>
-      {children}
-    </div>
-  );
+function EditEventPage(){
+   const data = useRouteLoaderData('event-detail');
+   const event = data.event;
+  return <EventForm event={event}></EventForm>
 }
 
-export default PageContent;
+export default EditEventPage;
