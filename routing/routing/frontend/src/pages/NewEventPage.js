@@ -1,9 +1,12 @@
+import EventForm from "../components/EventForm";
+
 function NewEventPage() {
-    return (
-        <>
-            <h1>New Event page</h1>
-        </>
-    );
+    function submitHandler(event){
+        //To send request in backend.
+        event.preventDefault();
+
+    }
+    return <EventForm></EventForm>
 }
 
 export default NewEventPage;
