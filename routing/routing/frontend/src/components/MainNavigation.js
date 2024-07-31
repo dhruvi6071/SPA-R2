@@ -1,7 +1,7 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 
-import classes from './MainNavigation.module.css';
-import NewsletterSignup from './NewsLetterSignUp';
+import classes from "./MainNavigation.module.css";
+import NewsletterSignup from "./NewsLetterSignUp";
 
 function MainNavigation() {
   return (

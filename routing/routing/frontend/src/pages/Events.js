@@ -3,7 +3,6 @@ import { useLoaderData, json, defer, Await } from "react-router-dom";
 
 import EventsList from "../components/EventsList";
 
-
 function EventsPage() {
   const { events } = useLoaderData();
 
@@ -14,10 +13,10 @@ function EventsPage() {
 
   return (
     // suspense is used to handle fallback when other data is still to arrive.
-    <Suspense fallback={<p style={{textAlign: 'center'}}>Loading..</p>}>
-    <Await resolve={events}>
-      {(loaderEvents) => <EventsList events={loaderEvents}></EventsList>}
-    </Await>
+    <Suspense fallback={<p style={{ textAlign: "center" }}>Loading..</p>}>
+      <Await resolve={events}>
+        {(loaderEvents) => <EventsList events={loaderEvents}></EventsList>}
+      </Await>
     </Suspense>
   );
 }
