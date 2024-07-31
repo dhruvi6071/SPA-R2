@@ -1,26 +1,27 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
-import EditEventPage from './pages/EditEvent';
-import ErrorPage from './pages/Error';
+import EditEventPage from "./pages/EditEvent";
+import ErrorPage from "./pages/Error";
 import EventDetailPage, {
   loader as eventDetailLoader,
   action as deleteEventAction,
-} from './pages/EventDetail';
-import EventsPage, { loader as eventsLoader } from './pages/Events';
-import EventsRootLayout from './pages/EventsRoot';
-import HomePage from './pages/HomePage';
-import NewEventPage, {action as newEventAction} from './pages/NewEventPage';
-import RootLayout from './pages/Root';
+} from "./pages/EventDetail";
+import EventsPage, { loader as eventsLoader } from "./pages/Events";
+import EventsRootLayout from "./pages/EventsRoot";
+import HomePage from "./pages/HomePage";
+import NewEventPage from "./pages/NewEventPage";
+import { action as manipulateAction } from "./components/EventForm";
+import RootLayout from "./pages/Root";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <RootLayout />,
     errorElement: <ErrorPage />,
     children: [
       { index: true, element: <HomePage /> },
       {
-        path: 'events',
+        path: "events",
         element: <EventsRootLayout />,
         children: [
           {
@@ -29,21 +30,24 @@ const router = createBrowserRouter([
             loader: eventsLoader,
           },
           {
-            path: ':eventId',
-            id: 'event-detail',
+            path: ":eventId",
+            id: "event-detail",
             loader: eventDetailLoader,
             children: [
               {
-              index: true,
-              element: <EventDetailPage />,
-              loader: eventDetailLoader,
-              action: deleteEventAction,
+                index: true,
+                element: <EventDetailPage />,
+                loader: eventDetailLoader,
+                action: deleteEventAction,
               },
-              { path: 'edit', element: <EditEventPage /> }
-            ]
-          
+              {
+                path: "edit",
+                element: <EditEventPage />,
+                action: manipulateAction,
+              },
+            ],
           },
-          { path: 'new', element: <NewEventPage />, action: newEventAction },
+          { path: "new", element: <NewEventPage />, action: manipulateAction },
         ],
       },
     ],
