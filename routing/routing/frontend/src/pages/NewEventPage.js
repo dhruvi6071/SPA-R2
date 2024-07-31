@@ -27,5 +27,5 @@ export async function action({request, params}) {
         throw json({message: 'Could not send the data'}, {status: 500});
     }
     
-    return redirect;
+    return redirect('/');
 }
